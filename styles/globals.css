@@ -4,6 +4,7 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: #000;
 }
 
 a {
@@ -13,4 +14,177 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+/* navbar */
+
+.container-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 20px;
+  position: sticky;
+  top: 0;
+}
+
+.info-navbar {
+  display: flex;
+  width: 250px;
+  justify-content: space-between;
+  color: #0cf;
+  position: relative;
+}
+.info-navbar p::before{
+  position: absolute;
+  content: attr(data-text);
+  box-shadow: 0px 0px 5px #0cf;
+  filter: blur(10px) brightness(0);
+  animation: flicker 5s linear infinite;
+  animation-delay: 1s;
+}
+@keyframes flicker {
+  0%{filter: blur(5px) brightness(1);}
+  3%{filter: blur(5px) brightness(0);}
+  6%{filter: blur(5px) brightness(0);}
+  7%{filter: blur(5px) brightness(1);}
+  8%{filter: blur(5px) brightness(0);}
+  9%{filter: blur(5px) brightness(1);}
+  10%{filter: blur(5px) brightness(0);}
+  20%{filter: blur(5px) brightness(1);}
+}
+.info-navbar p {
+  cursor: pointer;
+  position: relative;
+  font-weight: 400;
+}
+.info-navbar p::after {
+  position: absolute;
+  content: "";
+  width: 0%;
+  height: 1px;
+  background-color: #0cf;
+  left: 50%;
+  bottom: -10px;
+  transition: all 0.3s ease-in-out;
+  filter: blur(2px);
+}
+.info-navbar p:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.logo-navbar {
+  height: 60px;
+  cursor: pointer;
+}
+
+.user-navbar {
+  width: 250px;
+  display: flex;
+  justify-content: end;
+}
+
+.container-navbar .btn {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #0cf;
+  font-size: 16px;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  letter-spacing: 4px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.container-navbar .btn:hover {
+  background-color: #0cf;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #0cfc,
+  0 0 25px #0cf9,
+  0 0 50px #0cf6,
+  0 0 100px #0cf3;
+}
+
+.container-navbar .btn span {
+  position: absolute;
+  display: block;
+}
+
+.container-navbar .btn span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #0cf);
+  animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+  0% {
+    left: -100%;
+  }
+  50%, 100% {
+    left: 100%;
+  }
+}
+
+.container-navbar .btn span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #0cf);
+  animation: btn-anim2 1s linear infinite;
+  animation-delay: .25s;
+}
+
+@keyframes btn-anim2 {
+  0% {
+    top: -100%;
+  }
+  50%, 100% {
+    top: 100%;
+  }
+}
+
+.container-navbar .btn span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #0cf);
+  animation: btn-anim3 1s linear infinite;
+  animation-delay: .5s;
+}
+
+@keyframes btn-anim3 {
+  0% {
+    right: -100%;
+  }
+  50%, 100% {
+    right: 100%;
+  }
+}
+
+.container-navbar .btn span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #0cf);
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: .75s;
+}
+
+@keyframes btn-anim4 {
+  0% {
+    bottom: -100%;
+  }
+  50%, 100% {
+    bottom: 100%;
+  }
 }
