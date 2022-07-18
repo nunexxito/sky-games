@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Card from '../components/Card'
-import Navbar from '../components/Navbar'
+// import Navbar from '../components/Navbar'
 
 export default function Home() {
   return (
@@ -14,7 +14,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Navbar/>
+      {/* <Navbar/> */}
       <Card/>
     </div>
   )
