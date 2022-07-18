@@ -8,8 +8,8 @@ export default function Navbar() {
 
     useEffect(() => {
         const info = document.querySelectorAll('.info-p');
-        gsap.fromTo(info, {opacity: 0}, {opacity: 1, duration: 5})
-        gsap.fromTo(btn, {opacity: 0, x: 250}, {opacity: 1, x: 0, duration: 3, ease: Circ.out})
+        gsap.fromTo(info, {opacity: 0}, {opacity: 1, duration: 3})
+        gsap.fromTo(btn, {opacity: 0}, {opacity: 1, duration: 3, ease: Circ.out})
         gsap.fromTo(img, {opacity: 0, y: -100}, {opacity: 1, y: 0, duration: 3})
     }, [])
 
