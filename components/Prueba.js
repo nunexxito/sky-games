@@ -44,7 +44,7 @@ const C=16;
 var Line=function(idx,rdx) {
   this.radius=radii[rdx];
   let f=2/C;
-let a=idx*TP/C;
+  let a=idx*TP/C;
   this.f1x=Math.cos(a-f);
   this.f1y=Math.sin(a-f);
   this.f2x=Math.cos(a+f);
@@ -140,31 +140,31 @@ var dash=[30,60];
 ctx.setLineDash(dash);
 
 var draw=()=>{
-ctx.fillRect(-CSIZE,-CSIZE,2*CSIZE,2*CSIZE);
-let p2=new Path2D();
-ctx.setLineDash(dash);
-ctx.lineWidth=40;
-ctx.globalAlpha=0.04;
+  ctx.fillRect(-CSIZE,-CSIZE,2*CSIZE,2*CSIZE);
+  let p2=new Path2D();
+  ctx.setLineDash(dash);
+  ctx.lineWidth=40;
+  ctx.globalAlpha=0.04;
   for (let i=0; i<lset.length; i++) {
-//ctx.lineWidth=20-3*i;
-let p=new Path2D(pa[i]);
-p.addPath(p,new DOMMatrix([-1,0,0,1,0,0]));
-p.addPath(p,new DOMMatrix([-1,0,0,-1,0,0]));
-p2.addPath(p);
-ctx.strokeStyle=colors[i%colors.length];
-ctx.lineWidth=50;
-  ctx.lineDashOffset=ldf[i]*t+ldo[i];
-  ctx.stroke(p);
+    //ctx.lineWidth=20-3*i;
+    let p=new Path2D(pa[i]);
+    p.addPath(p,new DOMMatrix([-1,0,0,1,0,0]));
+    p.addPath(p,new DOMMatrix([-1,0,0,-1,0,0]));
+    p2.addPath(p);
+    ctx.strokeStyle=colors[i%colors.length];
+    ctx.lineWidth=50;
+    ctx.lineDashOffset=ldf[i]*t+ldo[i];
+    ctx.stroke(p);
 
-ctx.strokeStyle="black"; //colors[(i+1)%colors.length];
-ctx.lineWidth=28;
-ctx.lineDashOffset=ldf2[i]*t+ldo2[i];
-ctx.stroke(p);
+    ctx.strokeStyle="black"; //colors[(i+1)%colors.length];
+    ctx.lineWidth=28;
+    ctx.lineDashOffset=ldf2[i]*t+ldo2[i];
+    ctx.stroke(p);
 
-ctx.strokeStyle=colors[(i+1)%colors.length];
-ctx.lineWidth=20;
-ctx.lineDashOffset=ldf3[i]*t+ldo3[i];
-ctx.stroke(p);
+    ctx.strokeStyle=colors[(i+1)%colors.length];
+    ctx.lineWidth=20;
+    ctx.lineDashOffset=ldf3[i]*t+ldo3[i];
+    ctx.stroke(p);
   }
   ctx.setLineDash([]);
   ctx.lineWidth=2;

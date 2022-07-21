@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint \"*/*.{js,jsx}\"",
+    "lint:fix": "eslint \"*/*.{js,jsx}\" --fix"
   },
   "dependencies": {
     "gsap": "^3.10.4",
@@ -19,6 +20,9 @@
   "devDependencies": {
     "babel-plugin-styled-components": "^2.0.7",
     "eslint": "8.19.0",
-    "eslint-config-next": "12.2.1"
+    "eslint-config-next": "12.2.1",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-react": "^7.30.1"
   }
 }
