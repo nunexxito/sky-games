@@ -6,7 +6,6 @@ import Clash from "./Clash";
 import Cod from "./Cod";
 import Sky from "./Sky";
 import Valorant from "./Valorant";
-import styled from "styled-components";
 
 const border = {
   borderRadius: "6px",

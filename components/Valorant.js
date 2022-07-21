@@ -1,3 +1,5 @@
+import React from "react";
+
 export default function Valorant({valorant}) {
   return(
     <div style={{display: valorant ? "inline-block" : "none", transition: "all 0.3s ease-in-out"}}>

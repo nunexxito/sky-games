@@ -52,7 +52,9 @@ export default function Navbar() {
             <Link href='/profile'>
               <li>Mi perfil</li>
             </Link>
-            <li onClick={logout}>sign out</li>
+            <li>
+              <button onClick={logout} className='signOut'>Sign out</button>
+            </li>
           </ul>
         </button>}
       </div>

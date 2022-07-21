@@ -9,7 +9,6 @@ export default function Sky({sky}) {
       const segundo = document.querySelector(".segundo")
       const tercero = document.querySelector(".tercero")
       const cuarto = document.querySelector(".cuarto")
-      const up = document.querySelector("span[data-up]")
             
       if(primero.hasAttribute("data-show")){
         cuarto.removeAttribute("data-up")
