@@ -5,6 +5,7 @@ import Axie from "./Axie";
 import Clash from "./Clash";
 import Cod from "./Cod";
 import Sky from "./Sky";
+import Support from "./Suppot";
 import Valorant from "./Valorant";
 
 const border = {
@@ -56,16 +57,17 @@ export default function Card() {
 
   useEffect(()=> {
     const tl = gsap.timeline({
-      defaults: {duration: 3, stagger: .6}
+      defaults: {duration: 4, stagger: .6}
     })
     const gameCard = document.querySelectorAll(".game-card")
-    tl.fromTo(gameCard, {y: 250, opacity: 0}, {y: 0, opacity: 1})
+    tl.fromTo(gameCard, { opacity: 0}, { opacity: 1})
 
   },[])
 
   return(
     <div className={`${clash ? "clash" : cod ? "cod" : axie ? "axie" : valorant ? "valorant" : "none"}`}>
       {sky && <button onClick={change} className="exit">X</button>}
+      <Support/>
       <div className="container-card">
         <div className="card-card">
 
@@ -109,9 +111,3 @@ export default function Card() {
     </div>
   );
 }
-
-// const BackgroundImg = styled.div`
-// background: ${props => {
-//     props.clash ? "url(../public/img/Clash-Royale.jpg)" : 'none'
-// }}
-// `;

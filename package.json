@@ -10,6 +10,10 @@
     "lint:fix": "eslint \"*/*.{js,jsx}\" --fix"
   },
   "dependencies": {
+    "@emotion/react": "^11.9.3",
+    "@emotion/styled": "^11.9.3",
+    "@mui/icons-material": "^5.8.4",
+    "@mui/material": "^5.9.1",
     "gsap": "^3.10.4",
     "netlify-identity-widget": "^1.9.2",
     "next": "12.2.1",

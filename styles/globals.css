@@ -294,11 +294,13 @@ a {
   position: absolute;
   right: 20px;
   top: 100px;
+  height: 30px;
+  width: 30px;
   border: none;
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 50%;
-  backdrop-filter: blur(10px) saturate(160%) contrast(180%);
-  -webkit-backdrop-filter: blur(10px) saturate(160%) contrast(180%);
+  backdrop-filter: blur(20px) saturate(160%) contrast(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%) contrast(180%);
   padding: 5px 10px;
   color: #fff;
   text-shadow: 0px 0px 10px #000;
@@ -313,24 +315,32 @@ a {
   background-size: 100vw 100vh;
   background-repeat: no-repeat;
   transition: all 0.3s ease-in-out;
+  background-size: cover;
+  background-position: right;
 }
 .cod {
   background: url(../public/img/R.jpg);
   background-size: 100vw 100vh;
   background-repeat: no-repeat;
   transition: all 0.3s ease-in-out;
+  background-size: cover;
+  background-position: right;
 }
 .axie {
   background: url(../public/img/axie-artwork.jpeg);
   background-size: 100vw 100vh;
   background-repeat: no-repeat;
   transition: all 0.3s ease-in-out;
+  background-size: cover;
+  background-position: right;
 }
 .valorant {
   background: url(../public/img/maxresdefault.jpg);
   background-size: 100vw 100vh;
   background-repeat: no-repeat;
   transition: all 0.3s ease-in-out;
+  background-size: cover;
+  background-position: right;
 }
 .container-card {
   display: flex;
@@ -508,3 +518,101 @@ a {
 .mask-card span:nth-child(4) {
   background-image: linear-gradient(45deg, #fa7671 50%, #f45f7f);
 }
+
+/* profile */
+.containerProfile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  height: 80vh;
+}
+
+.profileCard {
+  background-image: linear-gradient(130deg
+  ,rgba(173, 239, 255, 0.5), rgba(0, 204, 255, 0.5), rgb(111, 226, 255, .5), rgba(0, 143, 179, .5));
+  background-size: 500%;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  animation: fanimado 5s infinite;
+  border-radius: 10px;
+  border: 2px solid #0cf;
+  padding: 40px;
+  box-shadow: 0 0 5px #0cfc,
+  0 0 25px #0cf9,
+  0 0 50px #0cf6,
+  0 0 100px #0cf3;
+}
+
+@keyframes fanimado {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+.firstLetter {
+  border-radius: 50%;
+  border: 1px solid #fff;
+  height: 60px;
+  width: 60px;
+  margin: 10px auto;
+  font-size: 40px;
+}
+
+/* Support */
+.supportContainer {
+  position: relative;
+}
+
+.infoSupport {
+  display: flex;
+  color: #0cf;
+  position: absolute;
+  right: 20px;
+  top: 590px;
+  background-color: rgba(0, 79, 98, 0.5);
+  padding: 7px;
+  border-radius: 10px;
+}
+
+.infoSupport p {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  text-shadow: 0px 0px 10px #0cf;
+}
+
+.supportLink {
+  display: flex;
+}
+
+.supportLink .supportIcon {
+  padding: 5px;
+  border-radius: 50%;
+  border: 1px solid #0cf;
+  background-color: #00ccff80;
+  height: 40px;
+  width: 40px;
+  margin-left: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 5px #0cfc,
+  0 0 25px #0cf9,
+  0 0 50px #0cf6,
+  0 0 100px #0cf3;
+}
+/* 
+.supportLink:hover {
+  box-shadow: 0 0 5px #0cfc,
+  0 0 25px #0cf9,
+  0 0 50px #0cf6,
+  0 0 100px #0cf3;
+} */
