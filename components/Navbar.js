@@ -46,7 +46,7 @@ export default function Navbar() {
           <span></span>
                     Login
         </button>}
-        {user && <button className="user">
+        {user && <div className="user">
           {username}
           <ul className="dropdown">
             <Link href='/profile'>
@@ -58,7 +58,7 @@ export default function Navbar() {
               </li>
             </Link>
           </ul>
-        </button>}
+        </div>}
       </div>
     </div>
   );

@@ -213,6 +213,7 @@ a {
   position: relative;
   cursor: pointer;
   z-index: 6;
+  padding-top: 4px;
 }
 .user:hover {
   color: #fff;
