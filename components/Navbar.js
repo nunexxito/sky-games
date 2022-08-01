@@ -1,4 +1,4 @@
-import React, {useRef, useEffect, useContext} from "react";
+import React, {useRef, useEffect, useContext, useState} from "react";
 import Image from "next/image";
 import {gsap, Circ} from "gsap"
 import AuthContext from "../store/AuthContext";
@@ -8,6 +8,13 @@ export default function Navbar() {
   let btn = useRef(null);
   let img = useRef(null);
   const {user, login, logout} = useContext(AuthContext);
+  const [profile, setProfile] = useState(false);
+
+  const changeLogout = () => {
+    logout();
+    setProfile(false);
+  }
+  const changeProfile = () => setProfile(prev => !prev);
 
   const username = user ? user.user_metadata.full_name : null
 
@@ -49,12 +56,23 @@ export default function Navbar() {
         {user && <div className="user">
           {username}
           <ul className="dropdown">
-            <Link href='/profile'>
-              <li>Mi perfil</li>
-            </Link>
+
+            {profile ?
+              <Link  href='/'>
+                <li>
+                  <button onClick={changeProfile} className="profileBtn">Inicio</button>
+                </li>
+              </Link>
+              :
+              <Link href='/profile'>
+                <li>
+                  <button onClick={changeProfile} className="profileBtn">Mi perfil</button>
+                </li>
+              </Link>}
+
             <Link href='/'>
               <li>
-                <button onClick={logout} className='signOut'>Sign out</button>
+                <button onClick={changeLogout} className='signOut'>Sign out</button>
               </li>
             </Link>
           </ul>

@@ -235,7 +235,6 @@ a {
   width: 100%;
   left: 0;
   margin-top: 12px;
-  color: #0cf;
   overflow: hidden;
   z-index: 4;
 }
@@ -244,7 +243,6 @@ a {
   opacity: 0;
   background-color: #045;
   transition: color .3s;
-  padding: 7px;
 }
 .dropdown li:last-child {
   padding: 0;
@@ -257,6 +255,7 @@ a {
 .user:hover .dropdown li {
   display: block;
   animation: user .5s forwards;
+  text-align: center;
 }
 
 @keyframes user {
@@ -268,6 +267,16 @@ a {
     opacity: 1;
     transform: translate(0);
   }
+}
+
+.profileBtn {
+  background: none;
+  border: none;
+  color: #0cf;
+  font-size: 16px;
+  text-shadow: 0 0 10px #0cf;
+  width: 100%;
+  padding: 7px;
 }
 
 .user .dropdown li:nth-last-child(1) {
@@ -544,6 +553,7 @@ a {
   0 0 25px #0cf9,
   0 0 50px #0cf6,
   0 0 100px #0cf3;
+  width: 300px;
 }
 
 @keyframes fanimado {
@@ -565,6 +575,32 @@ a {
   width: 60px;
   margin: 10px auto;
   font-size: 40px;
+}
+
+.metamaskBtn {
+  border: none;
+  width: 100%;
+  background-color: #0456;
+  color: #fff;
+  padding: 10px 0;
+  cursor: pointer;
+}
+.metamaskBtn:hover {
+  background-color: #079;
+}
+
+.metamaskAlert {
+  color: red;
+  margin: 0;
+  text-shadow: 0 0 10px #000;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.divContent {
+  width: 100%;
+  word-wrap: break-word;
 }
 
 /* Support */
