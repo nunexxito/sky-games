@@ -2,13 +2,25 @@ import React, {useRef, useEffect, useContext, useState} from "react";
 import Image from "next/image";
 import {gsap, Circ} from "gsap"
 import AuthContext from "../store/AuthContext";
-import Link from "next/link"
+import Link from "next/link";
+import {FormattedMessage} from "react-intl"
+import { LangContext } from "../context/LangContext";
+import TranslateOutlinedIcon from "@mui/icons-material/TranslateOutlined";
 
 export default function Navbar() {
   let btn = useRef(null);
   let img = useRef(null);
   const {user, login, logout} = useContext(AuthContext);
   const [profile, setProfile] = useState(false);
+  const language = useContext(LangContext);
+
+  const changeLanguage = () => {
+    if(language.locale === "en-US") {
+      language.selectLang("es-MX")
+    } else {
+      language.selectLang("en-US")
+    }
+  }
 
   const changeLogout = () => {
     logout();
@@ -29,16 +41,50 @@ export default function Navbar() {
     <div className='container-navbar'>
       <div className='info-navbar'>
         <Link href='/us'>
-          <p className="info-p" data-text='Nosotros'>Nosotros</p>
+          <p 
+            className="info-p" 
+            data-text={language.locale === "en-US" ? "Us" : "Nosotros"}
+          >
+            <FormattedMessage
+              id="app.us"
+              defaultMessage="Us"
+            />
+          </p>
         </Link>
 
-        <Link href='funcionality'>
-          <p className="info-p" data-text='Funcionalidad'>Funcionalidad</p>
+        <Link href='/functionality'>
+          <p 
+            className="info-p" 
+            data-text={language.locale === "en-US" ? "Functionality" : "Funcionalidad"}
+          >
+            <FormattedMessage
+              id="app.functionality"
+              defaultMessage="Functionality"
+            />
+          </p>
         </Link>
 
-        <Link href='contact'>
-          <p className="info-p" data-text='Contacto'>Contacto</p>
+        <Link href='/contact'>
+          <p 
+            className="info-p" 
+            data-text={language.locale === "en-US" ? "Contact" : "Contacto"}
+          >
+            <FormattedMessage
+              id="app.contact"
+              defaultMessage="Contact"
+            />
+          </p>
         </Link>
+
+        <div className="containerLanguage">
+          <button 
+            className="btnLanguage" 
+            onClick={changeLanguage}
+          >
+            <TranslateOutlinedIcon className="translateIcon"/>
+            {language.locale === "en-US" ? "ES" : "US"}
+          </button>
+        </div>
       </div>
       <div ref={el => img = el} className='logo-navbar'>
         <Link href='/'>
@@ -60,13 +106,23 @@ export default function Navbar() {
             {profile ?
               <Link  href='/'>
                 <li>
-                  <button onClick={changeProfile} className="profileBtn">Inicio</button>
+                  <button onClick={changeProfile} className="profileBtn">
+                    <FormattedMessage
+                      id="app.home"
+                      defaultMessage="Home"
+                    />
+                  </button>
                 </li>
               </Link>
               :
               <Link href='/profile'>
                 <li>
-                  <button onClick={changeProfile} className="profileBtn">Mi perfil</button>
+                  <button onClick={changeProfile} className="profileBtn">
+                    <FormattedMessage
+                      id="app.profile"
+                      defaultMessage="My prefile"
+                    />
+                  </button>
                 </li>
               </Link>}
 

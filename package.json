@@ -19,6 +19,7 @@
     "next": "12.2.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-intl": "^6.0.5",
     "styled-components": "^5.3.5"
   },
   "devDependencies": {

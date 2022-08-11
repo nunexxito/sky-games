@@ -1,8 +1,10 @@
 import React, {useEffect} from "react";
+import {FormattedMessage} from "react-intl"
 
 let skyInterval
 
 export default function Sky({sky}) {
+
   useEffect(()=> {
     skyInterval = setInterval(()=> {
       const primero = document.querySelector(".primero")
@@ -39,7 +41,12 @@ export default function Sky({sky}) {
   },[])
   return(
     <div className='sky' style={{display: sky ? "none" : "inline-block", transition: "all 0.3s ease-in-out"}}>
-      <h1>Que es skyGame?</h1>
+      <h1>
+        <FormattedMessage
+          id="app.welcome"
+          defaultMessage="What is SkyGame"
+        />
+      </h1>
       <h2>
                 esto es solamente una prueba
         <div className="mask-card">

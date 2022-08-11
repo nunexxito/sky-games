@@ -1,13 +1,13 @@
 import React from "react";
 import { FormattedMessage } from "react-intl";
 
-export default function profile() {
+export default function functionality() {
   return(
     <div>
       <h1 style={{color: "#fff"}}>
         <FormattedMessage
-          id="app.contact"
-          defaultMessage="Contact"
+          id="app.functionality"
+          defaultMessage="Functionality"
         />
       </h1>
     </div>

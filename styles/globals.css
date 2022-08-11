@@ -37,11 +37,20 @@ a {
 
 .info-navbar {
   display: flex;
-  width: 250px;
+  /* width: 320px; */
   justify-content: space-between;
   color: #0cf;
   position: relative;
 }
+
+.info-p {
+  margin-right: 8px;
+}
+
+.info-p:last-child {
+  margin: 0;
+}
+
 .info-navbar p::before{
   position: absolute;
   content: attr(data-text);
@@ -84,10 +93,34 @@ a {
   text-shadow: 0px 0px 10px #0cf;
 }
 
+.containerLanguage {
+  display: flex;
+  align-items: center;
+}
+
+.translateIcon {
+  color: #0cf;
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+}
+
+.btnLanguage {
+  background-color: rgba(0, 204, 255, 0.2);
+  color: #0cf;
+  text-shadow: 0px 0px 10px #0cf;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 2px 5px;
+}
+
 .logo-navbar {
   height: 60px;
   cursor: pointer;
   overflow: hidden;
+  position: fixed;
+  right: 40%;
 }
 
 .user-navbar {
@@ -317,7 +350,6 @@ a {
   cursor: pointer;
 }
 .exit:hover {
-  /* background-color: rgba(0, 0, 0, 0.1); */
   background-color: rgba(255, 255, 255, 0.5);
 }
 .clash {
@@ -611,9 +643,9 @@ a {
 .infoSupport {
   display: flex;
   color: #0cf;
-  position: absolute;
+  position: fixed;
   right: 20px;
-  top: 590px;
+  bottom: 20px;
   background-color: rgba(0, 79, 98, 0.5);
   padding: 7px;
   border-radius: 10px;
